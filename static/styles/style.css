@@ -1,11 +1,82 @@
 * {
     box-sizing: border-box;
-}
-body {
+  }
+  .root {
+    --color-primary: #0234dc;
+    --color-secondary: #13adce;
+    --color-saint: #a3d664;
+  }
+  html {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  body {
     margin: 0;
+    padding: 0;
     height: 100vh;
-    background-color: red;
-}
-p {
+  }
+  .grid-container {
+      display: grid;
+      grid-template-areas:
+         "header"
+         "main"
+         "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: 5rem 1fr 5rem;
+      height: 100%;   
+    }
+  
+
+
+  
+  
+  
+
+
+/* from Base.html */
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    background-color: khaki;
+  }
+  .navbar-brand {
     color: green;
-}
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .navbar-brand:hover {
+    background: #ed830a;
+    border: 3px solid cornflowerblue;
+    border-radius: 5px;
+  }
+  .navbar-product p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;  
+  }
+  header {
+    grid-area: header;
+    color: green;
+    
+    justify-content:space-between;
+    align-items: center;
+    height: 100%;
+  }
+.btn-group {
+  grid-area: header;
+    color: green;
+    float: left;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}  

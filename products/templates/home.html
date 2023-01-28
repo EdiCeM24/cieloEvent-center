@@ -1,0 +1,58 @@
+(% extends 'base.html' %)
+
+(% load static %)
+
+{% block content %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cielo Event Center</title>
+    <link rel="stylesheet" href=" styles/style.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <header>
+                <div class="brand">
+                    <a href="cielo"></a>
+                </div>
+                <div>
+                    <a href="sign-in">Sign In</a>
+                </div>
+                <div>
+                   <a href="pay">Payment</a> 
+                <div>
+            </header>
+            <main id="main-container">
+                <div>
+                    <div class="row">
+                        {% for Product in products %}
+                            <div class="col">
+                                <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{ Product.image_url }}" alt="Card image cap">
+                            <div class="card-body">
+                            <h3 class="product-text">{{ Product.name }}</h3>
+                            <h5 class="card-title">${{ Product.price }}</h5>
+                            <p class="card-text">{{ Product.text }}</p>
+                            <a href="#" class="btn btn-primary">Add To Cart</a>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        {% endfor %}
+                    </div>                    
+                </div>
+            </main>
+            <footer>
+                All rights reserved @2022
+            </footer>
+        </div>
+    </body>
+    <script src="{% static './streams.js' %}"
+</html>
+
+{% endblock %}
